@@ -1,0 +1,37 @@
+services:
+  gamesrentalservice.application:
+    build:
+      context: C:\Users\euric\source\gamerentalservice\GamesRentalService
+      dockerfile: GamesRentalService.Application\Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: GamesRentalService.Application
+      target: base
+    container_name: GamesRentalService.Application
+    entrypoint: C:\\remote_debugger\\x64\\msvsmon.exe /noauth /anyuser /silent /nostatus
+      /noclrwarn /nosecuritywarn /nofirewallwarn /nowowwarn /timeout:2147483646 /LogDebuggeeOutputToStdOut
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      ASPNETCORE_URLS: https://+:443;http://+:80
+      DOTNET_USE_POLLING_FILE_WATCHER: '1'
+      NUGET_FALLBACK_PACKAGES: ''
+      NUGET_PACKAGES: C:\.nuget\packages
+    image: gamesrentalserviceapplication:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath c:\.nuget\packages  "C:\app\bin\Debug\net5.0\GamesRentalService.Application.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: C:\remote_debugger\x64\utils\KillProcess.exe
+        dotnet.exe
+      com.microsoft.visualstudio.debuggee.program: '"C:\Program Files\dotnet\dotnet.exe"'
+      com.microsoft.visualstudio.debuggee.workingdirectory: C:\app
+    ports:
+    - target: 80
+    - target: 443
+    volumes:
+    - C:\Users\euric\AppData\Roaming\ASP.NET\Https:C:\Users\ContainerUser\AppData\Roaming\ASP.NET\Https:ro
+    - C:\Users\euric\AppData\Roaming\Microsoft\UserSecrets:C:\Users\ContainerUser\AppData\Roaming\Microsoft\UserSecrets:ro
+    - C:\Users\euric\source\gamerentalservice\GamesRentalService\GamesRentalService.Application:C:\app:rw
+    - C:\Users\euric\onecoremsvsmon\16.9.1154.0:C:\remote_debugger:ro
+    - C:\Users\euric\source\gamerentalservice\GamesRentalService:C:\src:rw
+    - C:\Users\euric\.nuget\packages:c:\.nuget\packages:ro
+version: '3.4'

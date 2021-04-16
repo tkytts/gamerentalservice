@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  gamesrentalservice.application:
+    image: ${DOCKER_REGISTRY-}gamesrentalserviceapplication
+    build:
+      context: .
+      dockerfile: GamesRentalService.Application\Dockerfile

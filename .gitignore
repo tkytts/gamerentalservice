@@ -1,0 +1,16 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/GamesRentalService/GamesRentalService.Tests/obj
+/GamesRentalService/GamesRentalService.UnitTests/obj
+/GamesRentalService/GamesRentalService.Application/obj
+/GamesRentalService/GamesRentalService.Application/bin/Debug
+/GamesRentalService/GameRentalService.Infrastructure/obj
+/GamesRentalService/GameRentalService.Infrastructure/bin/Debug
+/GamesRentalService/GameRentalService.Domain/obj
+/GamesRentalService/GameRentalService.Domain/bin/Debug
+/GamesRentalService/.vs/GamesRentalService/v16/.suo
+/GamesRentalService/.vs/GamesRentalService
+/GamesRentalService/GamesRentalService.UnitTests/bin/Debug/net5.0
+/GamesRentalService/bin/Debug
